@@ -22,8 +22,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - with:
-          path: d:\Develop\Deployer\ALL\Services\Github.com Actions\Actions\ALL\Actions Checkout\
+      - run: |
+          date > generated.txt
+          cd /d "d:\Develop\Deployer\ALL\Services\Github.com Actions\Actions\ALL"
+          git init
+          git add -A
+          git push
         
       # Runs a single command using the runners shell
       - name: Run a one-line script
